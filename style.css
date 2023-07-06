@@ -1,0 +1,118 @@
+@import url("./assets/fonts/fonts.css");
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  /* borde-box => by padding , size element dont change */
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+  --primaryColor: #6d28d9;
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s ease-out;
+  --maxWidth: 1170px;
+  --borderRadius: 5px;
+}
+body {
+  font-family: "sans";
+  color: var(--mainBlack);
+  background-color: var(--bodyColor);
+  position: relative;
+  direction: rtl;
+}
+.main-layout {
+  display: flex;
+}
+.nav {
+  background-color: #fff;
+  height: 100vh;
+  width: 250px;
+  position: sticky;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 100px 0 0;
+  background: linear-gradient(180deg, #324467, #283142);
+  transition: var(--mainTransition);
+}
+.nav__items {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.nav__items ::-webkit-scrollbar {
+  display: none;
+}
+.nav__item {
+  margin: 5px 0;
+}
+.nav__logo {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+.nav li {
+  margin: 5px 0;
+}
+.nav__link {
+  text-decoration: none;
+  display: flex;
+  color: var(--mainGrey);
+  padding: 12px 8px;
+  transition: var(--mainTransition);
+}
+.nav__link:hover {
+  background-color: #eef2f8;
+  color: #2c4982;
+  border-radius: 1.5rem;
+}
+.app-version {
+  color: #efefef;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app {
+  width: 200vh;
+  padding: 3rem 2rem 0 0;
+  flex-grow: 1;
+}
+
+.icon-container {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+/* mini sidebar: */
+.mini-sidebar.nav {
+  width: 70px;
+  overflow-x: hidden;
+}
+.nav.mini-sidebar .app-version__lable {
+  display: none;
+}
+.nav.mini-sidebar .nav__logo {
+  font-size: 1rem;
+}
+.sidebar-toggler {
+  transition: var(--mainTransition);
+}
+.nav.mini-sidebar .sidebar-toggler {
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
